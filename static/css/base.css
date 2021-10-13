@@ -3,10 +3,9 @@ html {
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #defdf1;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #555;
     font-family: 'Sarabun';
 }
 
@@ -20,7 +19,7 @@ body {
 }
 
 .logo-font {
-    text-transform: uppercase;
+    color: #defdf1;
 }
 
 .main-logo-link {
@@ -47,7 +46,7 @@ body {
 }
 
 .text-black {
-    color: #000 !important;
+    color: rgb(48, 47, 47) !important;
 }
 
 .border-black {
@@ -81,6 +80,16 @@ a.category-badge > span.badge:hover {
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+.bg-esmeralda {
+    background-color: #666b6d;;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.dropdown-menu{
+    background-color: #defdf1;
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -153,21 +162,20 @@ a.category-badge > span.badge:hover {
 
 /*----------buttons categories -----------*/ 
 button {
-    transition: all .5s ease;
-    color: rgb(0, 0, 0);
-    border: 3px solid rgb(0, 0, 0);
-    font-family:'Montserrat', sans-serif;
+    transition: all 1.5s ease;
+    color: #17252a;
+    border: 1px solid #defdf1;
     text-align: center;
     line-height: 1;
-    font-size: 17px;
+    font-size: 18px;
     background-color : transparent;
     padding: 10px;
     outline: none;
     border-radius: 4px;
 }
 button:hover {
-    color: #001F3F;
-    background-color: rgb(136, 127, 127);
+    
+    background-color: #c2c2c2;
 }
 
 /* -------------------------------- Media Queries */
