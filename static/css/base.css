@@ -59,9 +59,10 @@ body {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: white;
+	background: #defdf1;
 	z-index: -1;
 }
+
 
 a.category-badge > span.badge:hover {
     background: #212529 !important;
@@ -82,12 +83,16 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
 }
 
-.bg-esmeralda {
-    background-color: #666b6d;;
+.bg-grey {
+    background-color: #666b6d;
     padding-bottom: 15px;
     padding-top: 15px;
+    
 }
 
+.bg-white {
+    background-color: rgb(222 253 241 / 63%)!important;
+}
 .dropdown-menu{
     background-color: #defdf1;
 }
@@ -162,7 +167,7 @@ a.category-badge > span.badge:hover {
 
 /*----------buttons categories -----------*/ 
 button {
-    transition: all 1.5s ease;
+    transition: all 1.0s ease;
     color: #17252a;
     border: 1px solid #defdf1;
     text-align: center;
