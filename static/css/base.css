@@ -3,6 +3,7 @@ html {
 }
 
 body {
+    background: url('/media/embroidery10.jpeg') no-repeat center center fixed;
     background-color: #defdf1;
     background-size: cover;
     height: calc(100vh - 164px);
@@ -91,7 +92,10 @@ input[name='q']::placeholder {
     background-color: rgb(222 253 241 / 63%)!important;
 }
 .dropdown-menu{
-    background-color: #defdf1;
+    background-color: transparent;
+}
+.dropdown{
+    padding-top: 12px;
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -263,6 +267,20 @@ button {
 button:hover {
     
     background-color: #c2c2c2;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/ 
+    height: 40px;
+    font-weight: 900;
+    font-size: large;
+    
+}
+#color{
+    background-color: #defdf1;
 }
 
 /* -------------------------------- Media Queries */
