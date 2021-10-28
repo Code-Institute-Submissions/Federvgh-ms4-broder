@@ -5,7 +5,7 @@
                 Home
             </a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" id="menu">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
@@ -26,13 +26,13 @@
             </a>  
         </li>
         <li class="nav-item px-4" id="#">
-            <a class="logo-font nav-link text-black m-1" href="{% url 'products' %}?category=bibs">
-                <button>Bibs</button>
+            <a class="logo-font nav-link text-black m-1" href="{% url 'products' %}?category=Masks">
+                <button>Masks</button>
             </a>  
         </li>
         <li class="nav-item px-4" id="#">
             <a class="logo-font nav-link text-black m-1" href="{% url 'products' %}?category=embroidery">
-                <button>Embroidery</button>
+                <button>Artistic Designs</button>
             </a>  
         </li>
     </ul>

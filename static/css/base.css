@@ -92,12 +92,11 @@ input[name='q']::placeholder {
     background-color: rgb(222 253 241 / 63%)!important;
 }
 .dropdown-menu{
-    background-color: transparent;
+    background-color:#defdf1;
 }
-.dropdown{
+#menu{
     padding-top: 12px;
 }
-
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
@@ -274,9 +273,9 @@ button:hover {
     bottom: 0;
     width: 100%;
     /* Height of the footer*/ 
-    height: 40px;
-    font-weight: 900;
-    font-size: large;
+    height: 30px;
+    font-weight: 600;
+    font-size: medium;
     
 }
 #color{
