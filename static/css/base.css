@@ -95,7 +95,11 @@ input[name='q']::placeholder {
     background-color:#defdf1;
 }
 #menu{
-    padding-top: 12px;
+    padding-top: 6px;
+}
+
+.col-md-6{
+    padding-top: 15px;
 }
 /* ------------------------------- bootstrap toasts */
 

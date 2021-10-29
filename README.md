@@ -1,108 +1,292 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+**Broder**
+==================
+Table of contents:
+-----------------
 
-Welcome Federvgh,
+- [Description](#description)
+ - [User Experience](#user-experience)
+     - User Stories
+     - Strategy
+     - Scope
+     - Structure
+     - Skeleton
+- [Technologies](#technologies)
+ - [Testing](#testing)
+     - Browser Compatibility
+     - OS Compatibility
+     - Devices Compatibility
+     - W3 HTML Validation
+     - W3 CSS Validation 
+     - CSS Lint Validation 
+     - JSHint Validation
+     - Python PEP8 Validation
+     - Lightspeed Performance Test
+     - Regression Testing
+     - User Testing
+     - Automated Testing
+     - Bugs
+ - [Deployment](#deployment)
+ - [Credits](#credits)
+     - Code Used
+     - Content
+     - Acknowledgements
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Description
+-----------
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Broder is an e-commerce website built using Python and Django. 
+The live site can be viewed [here](https://ms4-broder.herokuapp.com/).
 
-## Gitpod Reminders
+## User Experience
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Features
+- The navigation menu will offer users a number of site locations depending on their user access. 
+- Pay for products using Stripe.
+- View products from the user personal account.
+- Allauth user accounts.
+- CRUD Functionality.
+– Search bar to query the database of products.
+– Displays shopper account details and order history
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+### User Stories
 
-Another blue button should appear to click: _Open Browser_.
+As a first time user, I want:
+- To quickly be able to understand the purpose of the website.
+- To be able to register, sign in and sign out with ease.
+- To navigate through the site and easily find the products I want.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+As a returning visitor, I want:
+- To sign in as easily as I did on my first visit and remain signed in if I 
+choose to.
+- To be able to reset my password.
+- To be able to view all my purchases from my profile.
+- To be able to save my details for future purchases.
 
-A blue button should appear to click: _Make Public_,
+As a frequent user, I want:
+- To sign in and view my purchases.
+- To add products to my basket and that they remain there for future purchase.
+- To change some of my user details.
 
-Another blue button should appear to click: _Open Browser_.
+### User Journey
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+1. User's Journey starts at the homepage. 
+1. They are presented with a picture hat hints at what the site it’s about.
+1. In the middle they can find phrase that symbolizes art
+1. On the bottom they can see and “About” description
 
-To log into the Heroku toolbelt CLI:
+### Design
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- Colour Scheme
+    - I used a friendly light emerald color scheme with a transparent option in some elements. Originally it was white but it felt a little traditional.
+- Typography
+    - I used 'Sarabun' as a font 
+- Imagery
+    - Most of the images were downloaded from pinterest with the idea of background ion white or similar 
+- Wireframes
+    - I created wireframes for the basic ideas. The overall structure of the website persists from the wireframes to the complete project. However, I was unable to complete certain functionality due to time contraints and had to focus on other problems. 
+        - [Homepage](documentation/wireframes/navigation-footer.png)
+        - [Modal Login](documentation/wireframes/modal-login.png)
+        - [Events View](documentation/wireframes/events-view.png)
+        - [Showtimes](documentation/wireframes/event-showtimes.png)
+        - [Ticket View](documentation/wireframes/profile-viewtickets.png)
+        - [Special Event](documentation/wireframes/special-event.png)
+        - [Ticket View](documentation/wireframes/ticket-view.png)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Missing Features
 
-------
+I would have liked to have a logo, I didn’t have time to design it.
+On one of the tabs I will like to add some pictures of the artist doing works from start to finish.
 
-## Release History
+### Languages
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Frameworks, Libraries & Programs Used
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+1. [Django](https://en.wikipedia.org/wiki/Django_%28web_framework%29) - Framework
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+1. [Amazon Web Services](https://en.wikipedia.org/wiki/Amazon_Web_Services) - Identity and Access Management & S3 (Media & Static Files)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+1. [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - Django Authentication, Registration & Account Management
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+1. [Stripe](https://stripe.com/en-gb) - Payment API
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+1. [Bootstrap](https://getbootstrap.com/) - CSS Framework
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+1. [Heroku](https://en.wikipedia.org/wiki/Heroku) - Host Website
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+1. [Github](https://github.com/) - Repository Host
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+1. [Gitpod](https://www.gitpod.io/) - Development Environment
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+1. [Google Fonts](https://fonts.google.com/?query=Oswa) - Website Font
 
-------
+1. [Font Awesome](https://fontawesome.com/) - Icons
 
-## FAQ about the uptime script
+1. [Balsamiq](https://balsamiq.com/) - Wireframes- [Description](#description)
+ - [User Experience](#user-experience)
+     - User Stories
+     - Strategy
+     - Scope
+     - Structure
+     - Skeleton
+- [Technologies](#technologies)
+ - [Testing](#testing)
+     - Browser Compatibility
+     - OS Compatibility
+     - Devices Compatibility
+     - W3 HTML Validation
+     - W3 CSS Validation 
+     - CSS Lint Validation 
+     - JSHint Validation
+     - Python PEP8 Validation
+     - Lightspeed Performance Test
+     - Regression Testing
+     - User Testing
+     - Automated Testing
+     - Bugs
+ - [Deployment](#deployment)
+ - [Credits](#credits)
+     - Code Used
+     - Content
+     - Acknowledgements
 
-**Why have you added this script?**
+Description
+-----------
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+## User Experience
 
-**How will this affect me?**
+### Features
+- The navigation menu will offer users a number of site locations depending on their user access. 
+- Pay for tickets using Stripe.
+- View products from the user personal account.
+- Allauth user accounts.
+- CRUD Functionality.
+– Search bar to query the database of products.
+– Displays shopper account details and order history
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### User Stories
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+As a first time user, I want:
+- To quickly be able to understand the purpose of the website.
+- To be able to register, sign in and sign out with ease.
+- To navigate through the site and easily find the products I want.
 
-**So….?**
+As a returning visitor, I want:
+- To sign in as easily as I did on my first visit and remain signed in if I 
+choose to.
+- To be able to reset my password.
+- To be able to view all my purchases from my profile.
+- To be able to save my details for future purchases.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+As a frequent user, I want:
+- To sign in and view my purchases.
+- To add products to my basket and that they remain there for future purchase.
+- To change some of my user details.
 
-**Can I opt out?**
+### User Journey
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+1. User's Journey starts at the homepage. 
+1. They are presented with a picture hat hints at what the site it’s about.
+1. In the middle they can find phrase that symbolizes art
+1. On the bottom they can see and “About” description
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Design
 
-**Anything more?**
+- Colour Scheme
+    - I used a friendly light emerald color scheme with a transparent option in some elements. Originally it was white but it felt a little tradinional.
+- Typography
+    - I a font called 'Sarabun' 
+- Imagery
+    - Most of the images were downloaded from pinterest with the idea of background ion white or similar 
+- Wireframes
+    - I created wireframes for the basic ideas. The overall structure of the website persists from the wireframes to the complete project. However, I was unable to complete certain functionality due to time contraints and had to focus on other problems. 
+        - [Homepage](documentation/wireframes/navigation-footer.png)
+        - [Modal Login](documentation/wireframes/modal-login.png)
+        - [Events View](documentation/wireframes/events-view.png)
+        - [Showtimes](documentation/wireframes/event-showtimes.png)
+        - [Ticket View](documentation/wireframes/profile-viewtickets.png)
+        - [Special Event](documentation/wireframes/special-event.png)
+        - [Ticket View](documentation/wireframes/ticket-view.png)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## Missing Features
 
----
+I would have liked to have a logo, I didn’t have time to design it.
+On one of the tabs I will like to add some pictures of the artist doing works from start to finish.
 
-Happy coding!
+### Languages
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+
+### Frameworks, Libraries & Programs Used
+
+1. [Django](https://en.wikipedia.org/wiki/Django_%28web_framework%29) - Framework
+
+1. [Amazon Web Services](https://en.wikipedia.org/wiki/Amazon_Web_Services) - Identity and Access Management & S3 (Media & Static Files)
+
+1. [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - Django Authentication, Registration & Account Management
+
+1. [Stripe](https://stripe.com/en-gb) - Payment API
+
+1. [Bootstrap](https://getbootstrap.com/) - CSS Framework
+
+1. [Heroku](https://en.wikipedia.org/wiki/Heroku) - Host Website
+
+1. [Github](https://github.com/) - Repository Host
+
+1. [Gitpod](https://www.gitpod.io/) - Development Environment
+
+1. [Google Fonts](https://fonts.google.com/?query=Oswa) - Website Font
+
+1. [Font Awesome](https://fontawesome.com/) - Icons
+
+1. [Balsamiq](https://balsamiq.com/) - Wireframes
+
+1. [Favicon.cc](https://www.favicon.cc/) - Create Favicon
+
+1. [DBDiagram](https://dbdiagram.io/home) - Database Diagram
+
+
+Deployment
+----------
+
+To deploy this project you will need to set up accounts with the following services.
+
+- [Github](https://github.com/)     
+- [Gitpod](https://gitpod.io/)   
+- [Stripe](https://stripe.com/en-ie)   
+- [AWS](https://aws.amazon.com/)   
+- [Heroku](https://www.heroku.com/)    
+
+
+1. [Favicon.cc](https://www.favicon.cc/) - Create Favicon
+
+1. [DBDiagram](https://dbdiagram.io/home) - Database Diagram
+
+
+Deployment
+----------
+
+To deploy this project you will need to set up accounts with the following services.
+
+- [Github](https://github.com/)     
+- [Gitpod](https://gitpod.io/)   
+- [Stripe](https://stripe.com/en-ie)   
+- [AWS](https://aws.amazon.com/)   
+- [Heroku](https://www.heroku.com/)    
