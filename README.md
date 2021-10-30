@@ -382,7 +382,6 @@ To achieve this follow these steps:
 
 ### Setup local deployment
 
-1. **Clone or fork this repository (see above)**.
 2. **Install the requirements by typing:**  
         ```
         pip3 install -r requirements.txt
@@ -482,7 +481,7 @@ https://moderncss.dev/pure-css-smooth-scroll-back-to-top/
 I took color ideas for the site from the link below
 https://visme.co/blog/website-color-schemes/
 
-The deploymnet tutorial for heroku it was thoroughly explained in the below project so I copied from there
+The deploymnet tutorial for heroku it was thoroughly explained in the below project so I copied it from there
 https://github.com/chizzletaz/SpaceTravelAgency
 
 I took the project boutique as an example to create my website.
