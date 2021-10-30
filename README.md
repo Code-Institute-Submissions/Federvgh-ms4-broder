@@ -168,6 +168,8 @@ Testing
 3. All elements on the website are responsive, resizing to different screens and maintaining their integrity.
 4. The website loads correctly and functions on Chrome, Internet Explorer, Safari and Firefox browsers.
 5. All browsers were tested on pc, mobile devices and tablets.
+6. The website was tested by multiple users varied devices performed by family and friends and suggestions were made to improve
+functionality and UX design, like color, access, ease to use.
 
 
 OS the site was tested on:
@@ -463,11 +465,9 @@ To achieve this follow these steps:
 
 **Bugs**
 
-+ **Bug-01:** checkout migrations error -  It was working because the migration file was trying to remove a field named sku from one of the previous migrations, I had to delete those lines and run the migrations again,  I had to backup my database in case the migration failed with the dumpdata command.
++ **Bug-01:** checkout migrations error -  It was working because the migration file was trying to remove a field named sku from one of the previous migrations, I had to delete those lines and run the migrations again,  I had to backup my database in case the migration failed with the dumpdata command.  
 
-+ **Bug-02:** Checkout_order error - I forgot to run migrations for the order model.
-
-+ **Bug-03:** Change category error - I updated one category from the admin panel but the link on the navbar will not redirect,this was because the URL was not updated with the same name as the category, it had the old name. 
++ **Bug-02:** Change category error - I updated one category from the admin panel but the link on the navbar will not redirect,this was because the URL was not updated with the same name as the category, it had the old name.
 
 
 Acknoweledments
