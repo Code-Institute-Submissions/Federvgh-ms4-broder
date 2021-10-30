@@ -255,22 +255,6 @@ input[name='q']::placeholder {
 
 
 /*----------buttons categories -----------*/ 
-button {
-    transition: all 1.0s ease;
-    color: #17252a;
-    border: 1px solid #defdf1;
-    text-align: center;
-    line-height: 1;
-    font-size: 18px;
-    background-color : transparent;
-    padding: 10px;
-    outline: none;
-    border-radius: 4px;
-}
-button:hover {
-    
-    background-color: #c2c2c2;
-}
 
 #footer {
     position: absolute;
