@@ -58,7 +58,6 @@ As a frequent user, I want:
 
 1. User's Journey starts at the homepage. 
 1. They are presented with a picture hat hints at what the site it’s about.
-1. In the middle they can find phrase that symbolizes art
 1. On the bottom they can see and “About” description
 
 ### Design
@@ -75,6 +74,7 @@ As a frequent user, I want:
 
 
 ### Features
+
 - The navigation menu will offer users a number of site locations depending on their user access. 
 - Pay for products using Stripe.
 - View products from the user personal account.
@@ -92,6 +92,13 @@ In the body of the page there is an image that suggest what the website is about
 is "Broder" which means embroidery in french.
 The footer shows a little about me description on teh right and a short text on the left of what the site provides.
 The footer is only visible in the index page, this was made on purpose to make the website more user friendly for purchases.
+
+## Features Left to Implement
+
+I would have liked to have a logo, I didn’t have time to design it.
+On one of the tabs I will like to add some pictures of the artist doing works from start to finish.
+
+## Technologies
 
 ### Languages
 
@@ -128,67 +135,75 @@ The footer is only visible in the index page, this was made on purpose to make t
 
 1. [Balsamiq](https://balsamiq.com/) - Wireframes- [Description](#description)
 
-## Missing Features
 
-I would have liked to have a logo, I didn’t have time to design it.
-On one of the tabs I will like to add some pictures of the artist doing works from start to finish.
+Testing
+-------
 
-### Languages
-
-- [HTML5](https://en.wikipedia.org/wiki/HTML5)
-
-- [CSS3](https://en.wikipedia.org/wiki/CSS)
-
-- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
-
-- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+1. All links on the website connect to the assigned location.
+2. All images and elements on the website load correctly.
+3. All elements on the website are responsive, resizing to different screens and maintaining their integrity.
+4. The website loads correctly and functions on Chrome, Internet Explorer, Safari and Firefox browsers.
+5. All browsers were tested on pc, mobile devices and tablets.
 
 
-### Frameworks, Libraries & Programs Used
+OS the site was tested on:
+- Mac OS 11.6
+- Windows 10
+- Android (OxygenOS Version 9.0.6)
+- iOS 14.4.1
 
-1. [Django](https://en.wikipedia.org/wiki/Django_%28web_framework%29) - Framework
+----
+**Device Compatibility** 
 
-1. [Amazon Web Services](https://en.wikipedia.org/wiki/Amazon_Web_Services) - Identity and Access Management & S3 (Media & Static Files)
-
-1. [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - Django Authentication, Registration & Account Management
-
-1. [Stripe](https://stripe.com/en-gb) - Payment API
-
-1. [Bootstrap](https://getbootstrap.com/) - CSS Framework
-
-1. [Heroku](https://en.wikipedia.org/wiki/Heroku) - Host Website
-
-1. [Github](https://github.com/) - Repository Host
-
-1. [Gitpod](https://www.gitpod.io/) - Development Environment
-
-1. [Google Fonts](https://fonts.google.com/?query=Oswa) - Website Font
-
-1. [Font Awesome](https://fontawesome.com/) - Icons
-
-1. [Balsamiq](https://balsamiq.com/) - Wireframes
-
-1. [Favicon.cc](https://www.favicon.cc/) - Create Favicon
-
-1. [DBDiagram](https://dbdiagram.io/home) - Database Diagram
+The devices used during testing were: 
+- MacBook Air
+- Dell Inspiron
+- OnePlus 6t
+- iPhone X 
+- iPhone SE 
+- HP Elitebook G5 
+- iPad 10.2
+- Samsung Galaxy s20
+- Xiaomi MIA3
 
 
-Deployment
-----------
+----
+**W3 HTML Validation** 
 
-To deploy this project you will need to set up accounts with the following services.
-
-- [Github](https://github.com/)     
-- [Gitpod](https://gitpod.io/)   
-- [Stripe](https://stripe.com/en-ie)   
-- [AWS](https://aws.amazon.com/)   
-- [Heroku](https://www.heroku.com/)    
+HTML Validation with [https://validator.w3.org/](https://validator.w3.org/).
 
 
-1. [Favicon.cc](https://www.favicon.cc/) - Create Favicon
+----
+**W3C CSS Validation** 
 
-1. [DBDiagram](https://dbdiagram.io/home) - Database Diagram
+CSS validation with [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator/)
 
+
+----
+**CSS Lint Validation**
+
+CSS also validated via http://csslint.net/
+
+
+----
+**JSLint Javascript Validation** 
+
+Javascript validated via https://www.jslint.com/
+
+----
+**Lightspeed Performance Test** 
+
+
+**Results**
+
+----
+**Bugs**
+
++ **Bug-01:** checkout migrations did not work  because the migration file was trying to remove a field named sku from one of the previous migrations, I had to delete those lines and run the migrations again,  I had to backup my database in case the migration failed with the dumpdata command
+
++ **Bug-02:** Checkout_order error - I forgot to run migrations for the order model.
+
++ **Bug-03:** Change category error - I updated one category from the admin panel but the link on the navbar will not redirect,this was because the URL was not updated with the same name as the category, it had the old name. 
 
 Deployment
 ----------
