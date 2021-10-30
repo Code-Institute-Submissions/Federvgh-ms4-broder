@@ -113,13 +113,14 @@ and on the right side a user icon and a basket icon that shows the amount to spe
 The User Icon will display a profile option if the user is logged in if not, it will show a "login" or "register" option
 In the body of the page there is an image that suggest what the website is about, and the title or "brand" of the website
 is "Broder" which means embroidery in french.
-The footer shows a little about me description on teh right and a short text on the left of what the site provides.
+The footer shows a little about artist description on the right and a short text on the left of what the site provides.
 The footer is only visible in the index page, this was made on purpose to make the website more user friendly for purchases.
 
 ## Features Left to Implement
 
 I would have liked to have a logo, I didn’t have time to design it.
 On one of the tabs I will like to add some pictures of the artist doing works from start to finish.
+A wider descritpion of what the artist does how to contact her, pictures and videos of his work on a different section.
 
 ## Technologies
 
@@ -201,13 +202,6 @@ HTML Validation with [https://validator.w3.org/](https://validator.w3.org/).
 
 CSS validation with [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator/)
 
-
-----
-**CSS Lint Validation**
-
-CSS also validated via http://csslint.net/
-
-
 ----
 **JSLint Javascript Validation** 
 
@@ -216,6 +210,7 @@ Javascript validated via https://www.jslint.com/
 
 **Results**
 ![alt text](static/media/html_validation.JPG "Html validation")
+
 I was not able to fix this Html error, tried to look for it in Slack or with the tutors in Code Institute
 and they couldnt help either, so I want to add to my README file.
 
@@ -223,7 +218,6 @@ and they couldnt help either, so I want to add to my README file.
 ![alt text](static/images/jshint.jpg "javascript validation")
 
 ----
-
 
 Deployment
 ----------
