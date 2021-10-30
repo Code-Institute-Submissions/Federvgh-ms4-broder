@@ -8,6 +8,8 @@ Table of contents:
 * [General](#general)
 * [User Stories](#user-stories)
 * [Features](#Features)
+* [WireFrames](#WireFrames)
+* [Database Design](#database-design)
 
 - [Technologies](#technologies)
  - [Testing](#testing)
@@ -68,10 +70,6 @@ As a frequent user, I want:
     - I used 'Sarabun' as a font 
 - Imagery
     - Most of the images were downloaded from pinterest with the idea of background ion white or similar 
-- Wireframes
-    - I created wireframes for the basic ideas. The overall structure of the website persists from the wireframes to the complete project. However, I was unable to complete certain functionality due to time contraints and had to focus on other problems. 
-        - [Homepage](documentation/wireframes/navigation-footer.png)
-
 
 ### Features
 
@@ -82,6 +80,30 @@ As a frequent user, I want:
 - CRUD Functionality.
 – Search bar to query the database of products.
 – Displays shopper account details and order history   
+
+### WireFrames
+
+#### Home Page
+[Home Wireframe](static/media/home.jpg)<br>
+[Mobile Wireframe](static/media/Mobile.jpg)<br>
+[Mobile Products](static/media/mobile_products.jpg)<br>
+[Selected Products](static/media/selected_product.jpg)<br>
+[Products](static/media/products.jpg)<br>
+
+
+## Database Design
+
+This database uses a SQL database through PostgreSQL. They were originally built in JSON files, [which can be found here](products/fixtures).
+
+### Categories Database
+
+![JSON file screenshot of categories](static/media/categories.JPG)
+
+### Products Database
+
+![JSON file screenshot of products](static/media/products.JPG)
+
+[Back to the top](#lead-shot-hazard)
 
 ## Navigation
 
@@ -195,6 +217,9 @@ Javascript validated via https://www.jslint.com/
 
 
 **Results**
+![alt text](static/media/html_validation.JPG "Html validation")
+![alt text](static/media/css_validation.JPG "CSS validation")
+![alt text](static/images/jshint.jpg "javascript validation")
 
 ----
 **Bugs**

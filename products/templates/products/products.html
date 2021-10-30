@@ -107,14 +107,14 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
+    <script>
     // sorting products 
 		$('.btt-link').click(function(e) {
 			window.scrollTo(0,0)
 		})
 	</script>
     
-    <script type="text/javascript">
+    <script>
         $('#sort-selector').change(function() {
             var selector = $(this);
             var currentUrl = new URL(window.location);
@@ -137,7 +137,7 @@
         })
     </script>    
 
-    <script type="text/javascript">
+    <script>
 		//Get the button
 let mybutton = document.getElementById("btn-back-to-top");
 
