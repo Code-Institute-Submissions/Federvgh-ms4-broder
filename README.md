@@ -19,15 +19,13 @@
      - Devices Compatibility
      - W3 HTML Validation
      - W3 CSS Validation 
-     - CSS Lint Validation 
      - JSHint Validation
      - Python PEP8 Validation
      - User Testing
      - Bugs
  - [Deployment](#deployment)
  - [Credits](#credits)
-     - Code Used
-     - Acknowledgements
+
 
 ## UX
 
@@ -218,6 +216,12 @@ and they couldnt help either, so I want to add to my README file.
 
 ![alt text](static/media/css_validation.JPG "CSS validation")
 ![alt text](static/images/jshint.jpg "javascript validation")
+
+**Bugs**
+
++ **Bug-01:** checkout migrations error -  It was working because the migration file was trying to remove a field named sku from one of the previous migrations, I had to delete those lines and run the migrations again,  I had to backup my database in case the migration failed with the dumpdata command.  
+
++ **Bug-02:** Change category error - I updated one category from the admin panel but the link on the navbar will not redirect,this was because the URL was not updated with the same name as the category, it had the old name.
 
 ----
 
@@ -461,17 +465,9 @@ To achieve this follow these steps:
         - Scroll down to 'Signing secret' and click 'Reveal signing secret'.
         - Copy the signing secret and add to the Config Vars in Heroku.
 
-**Bugs**
 
-+ **Bug-01:** checkout migrations error -  It was working because the migration file was trying to remove a field named sku from one of the previous migrations, I had to delete those lines and run the migrations again,  I had to backup my database in case the migration failed with the dumpdata command.  
-
-+ **Bug-02:** Change category error - I updated one category from the admin panel but the link on the navbar will not redirect,this was because the URL was not updated with the same name as the category, it had the old name.
-
-
-Acknoweledments
+Credits
 -------
-
-**Code used**
 
 Back to top smooth button idea from link below:
 https://mdbootstrap.com/snippets/standard/mdbootstrap/2964350#css-tab-view
