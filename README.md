@@ -1,7 +1,7 @@
 **Broder**
 ==================
-Table of contents:
------------------
+
+![Am I responsive image](static/media/home_page.JPG "Responsive design for Tango Dictionary")
 
 # Table of Contents
 
@@ -21,7 +21,6 @@ Table of contents:
      - CSS Lint Validation 
      - JSHint Validation
      - Python PEP8 Validation
-     - Lightspeed Performance Test
      - User Testing
      - Bugs
  - [Deployment](#deployment)
@@ -93,7 +92,7 @@ As a frequent user, I want:
 
 ## Database Design
 
-This database uses a SQL database through PostgreSQL. They were originally built in JSON files, [which can be found here](products/fixtures).
+This database uses a SQL database through PostgreSQL. They were originally built in JSON files.
 
 ### Categories Database
 
@@ -212,9 +211,6 @@ CSS also validated via http://csslint.net/
 
 Javascript validated via https://www.jslint.com/
 
-----
-**Lightspeed Performance Test** 
-
 
 **Results**
 ![alt text](static/media/html_validation.JPG "Html validation")
@@ -240,3 +236,212 @@ To deploy this project you will need to set up accounts with the following servi
 - [Stripe](https://stripe.com/en-ie)   
 - [AWS](https://aws.amazon.com/)   
 - [Heroku](https://www.heroku.com/)    
+
+
+### Deployment to Heroku  
+
+1. **Create a Heroku App**
+    1. Create a new app by clicking the ‘New’ button.
+    ![new Heroku app button](static/media/new-app.png)
+    2. Give a unique name and set region to your nearest region.
+    ![name and region input](static/media/name-region.png)
+    3. Click ‘Create App’.
+    4. Click on the 'Resources' tab, in Add-ons type: postgress and choose 'Heroku Postgres'.
+    ![postgres add-on](static/media/postgress.png)  
+    5. For plan name choose the free plan and click submit form.
+
+2. **Setup the Postgres Database**
+    1. In your IDE install dj_database_url and psycopg2.   
+        ```
+        pip3 install dj_database_url
+        pip3 install psycopg2-binary
+        ```
+    2. Create a requirements file.  
+        ```
+        pip3 freeze > requirements.txt
+        ```
+    3. Import dj_database_url in `settings.py`.
+    4. Backup the database if you're using a local database instead of fixtures.  
+        ```
+        python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
+        ```  
+        p.s. make sure you're connected to your mysql database.  
+    5. Scroll down to DATABASES, comment out the default configuration and add the database url from Heroku   
+        ```
+        DATABASES = {
+                'default': dj_database_url.parse('DATABASE_URL')
+        }
+        ```
+        You can the database url from Heroku's Config Vars in the Settings tab. 
+        > Note: The DATABASE_URL from Heroku is an environment variable and shouldn't be committed in version control.
+    6. Run migrations.  
+          ```
+          python3 manage.py migrate
+          ```
+    7. In case of using a local database type:  
+        ```
+        python3 manage.py loaddata db.json
+        ```  
+        to import the data from the mySQL database to Postgre.
+    8. In case of using fixtures:  
+        First import the categories:  
+        ```
+        python3 manage.py loaddata categories
+        ```  
+        And then the products:  
+        ```
+        python3 manage.py loaddata products
+        ```  
+    
+3. **Create a superuser**  
+    - Type: `python3 manage.py createsuperuser`  
+    - Add a username and password.
+
+4. **Make a distinction between local and remote database**  
+    Create an if-statement in `settings.py` so that when the app is running on Heroku it connects to Postgres(remote) and otherwise, it connects to sequel light(local).  
+    ```
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+    ```
+5. **Install gunicorn**  
+    Gunicorn will replace the development server once the app is deployed to Heroku and will act as the web server.  
+    type: `pip3 install gunicorn`
+
+6. **Create a Heroku 'Procfile'**  
+    The Procfile is what Heroku looks for to know which file runs the app and how to run it.
+    1. In the terminal type: **touch Procfile** or create a new file named 'Procfile' in the root.
+    2. Inside the Procfile type:   
+    ```
+    web: gunicorn <Github appname>.wsgi:application
+    ```
+
+7. **Connect to Heroku in the terminal**
+    1. Login to your account on the Heroku website.
+    2. Go to account settings (click on your avatar).
+    3. Scroll down to the API Key section.
+    4. Click 'Reveal' and copy your API Key.
+    5. Login to Heroku via CLI  
+     ```
+     heroku login -i
+     ```
+    6. Login with your email but use the API Key as the password.
+    7. Temporarily disable the collection of static files until AWS has been setup.  
+        ```
+        heroku config:set DISABLE_COLLECTSTATIC=1 --app <Heroku appname>
+        ```  
+    8. Add the hostnames to allowed hosts in `settings.py`.  
+        ```
+        ALLOWED_HOSTS = ['<heroku appname>.herokuapp.com', 'localhost', '127.0.0.1']
+        ```
+       where 127.0.0.1 is the IP of the localhost, so that the app can also run locally.
+    9. Commit to GitHub.
+    10. Commit to Heroku. Make sure you have git remote initialized.  
+        ```
+        heroku git:remote -a <Heroku appname>
+        ```  
+        Push to Heroku.  
+        ```
+        git push heroku
+        ```
+
+8. **Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**  
+    1. Go to the Deploy tab.  
+    ![deploy tab](static/media/deploy.png)  
+    2. Under 'Deployment method', Click on 'Connect to GitHub'.
+    ![connect to github button](static/media/connect-to-github.png)
+    3. Under 'Connect to GitHub', enter the GitHub repository name and click ‘Search’ and click 'Connect'.
+    ![connect repository name](static/media/search-repo.png)
+    4. Scroll down to Automatic deploys and click the ‘Enable Automatic Deploys’ button.  
+    ![enable automatic deploy button](static/media/automatic-deploy.png)
+
+    ### Forking this GitHub Repository
+A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
+To achieve this follow these steps:
+1. Login to GitHub and follow this link to [the GitHub Repository](https://github.com/Federvgh/ms4-broder).
+2. At the top right of the page, click on the fork button.  
+![fork button](static/media/forking.png)
+3. You now have a copy of the repository in your GitHub account.
+
+### Cloning this GitHub repository
+1. Log in to GitHub and follow this link to [the GitHub Repository](https://github.com/Federvgh/ms4-broder)
+2. Click on the ‘Code’ button 
+![Code button](static/media/github-clone.png)
+3. To clone using HTTPS, copy the link that is displayed by clicking on the copy icon 
+![save icon](static/media/github-copy.png).
+4. Open a terminal in your preferred IDE (e.g. VSCode or Atom)
+5. Use  the ‘git clone’ command and add the link that you copied in step 3.
+6. Or for VSCode: click 'Explorer' or 'Shift + CMD + E'. 
+7. Click the button 'Clone Repository', add the url you copied above and hit enter.
+8. A clone will be created locally.
+
+> For more info on how to clone a repository check [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
+### Setup local deployment
+1. **Clone or fork this repository (see above)**.
+2. **Install the requirements by typing:**  
+        ```
+        pip3 install -r requirements.txt
+        ```  
+   in the terminal.
+3. **Set the environment variables.**
+    1. If you're using GitPod.
+        - In your workspace click 'Settings'.
+        - In Environment Variables insert the following variables:
+        ```
+        'DEVELOPMENT', 'True'
+        'SECRET_KEY', '<your secret key>'  e.g. from a key generator
+        'STRIPE_PUBLIC_KEY', '<your stripe public key>'
+        'STRIPE_SECRET_KEY', '<your stripe secret key>'
+        'STRIPE_WH_SECRET', '<your stripe webhook secret>'
+        ```
+    2. If you're using a local IDE, like VSCode.
+        - Create a .gitignore file in the root directory, if there isn't one.
+        - Open the .gitignore file and add 'env.py' to it, if it isn't in there. 
+        - Create an env.py file and set the environment variables by adding the following text: 
+        ```
+            import os
+
+            os.environ["STRIPE_PUBLIC_KEY"] = '<your stripe public key>'
+            os.environ["STRIPE_SECRET_KEY"] = '<your stripe secret key>'
+            os.environ["STRIPE_WH_SECRET"] = '<your stripe webhook secret>'
+
+            os.environ["SECRET_KEY"] = '<your secret key>'  e.g. from a key generator
+
+            os.environ["DEVELOPMENT"] = 'True'
+        ```  
+    > See [above](#setup-stripe) how to get your stripe keys.  
+    > Tip: use this [key generator](https://miniwebtool.com/django-secret-key-generator/)   
+4. **Migrate the database models**
+    - Check migrations
+    ```
+    python3 manage.py makemigrations --dry-run
+    ```
+    - Make migrations
+    ```
+    python3 manage.py makemigrations
+    ```
+    - Check migrate
+    ```
+    python3 manage.py migrate --plan
+    ```
+    - Migrate
+    ```
+    python3 manage.py migrate
+    ```
+
+5. **Load product data.**
+    - Type `python3 manage.py loaddata db.json`
+6. **Create a superuser account**
+    - `python3 manage.py createsuperuser`
+    - Add a username and password.   
+7.**Run the app.**
+   - In the terminal, type: `python3 <your python file name>.py`  
