@@ -413,7 +413,6 @@ To achieve this follow these steps:
 
             os.environ["DEVELOPMENT"] = 'True'
         ```  
-    > See [above](#setup-stripe) how to get your stripe keys.  
     > Tip: use this [key generator](https://miniwebtool.com/django-secret-key-generator/)  
 
 4. **Migrate the database models**
