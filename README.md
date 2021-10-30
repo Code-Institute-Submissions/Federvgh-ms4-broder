@@ -1,4 +1,5 @@
 **Broder**
+
 ==================
 
 ![Am I responsive image](static/media/home_page.JPG "Responsive design for Tango Dictionary")
@@ -26,7 +27,6 @@
  - [Deployment](#deployment)
  - [Credits](#credits)
      - Code Used
-     - Content
      - Acknowledgements
 
 ## UX
@@ -34,6 +34,10 @@
 ## General
 
 Broder is an e-commerce website built using Python and Django. 
+The site is fully responsive on all modern screen sizes, and it allows a user to add and remove products
+to a basket and buy them using stripe as payment method. This is for education purposes so the credit card is
+not linked to a bank account, you can use 4242 4242 42424 4242 and any cvc to test and you will receive an email
+with the "fake" purchase details.
 The live site can be viewed [here](https://ms4-broder.herokuapp.com/).
 
 ### User Stories
@@ -101,8 +105,6 @@ This database uses a SQL database through PostgreSQL. They were originally built
 ### Products Database
 
 ![JSON file screenshot of products](static/media/products.JPG)
-
-[Back to the top](#lead-shot-hazard)
 
 ## Navigation
 
@@ -214,17 +216,14 @@ Javascript validated via https://www.jslint.com/
 
 **Results**
 ![alt text](static/media/html_validation.JPG "Html validation")
+I was not able to fix this Html error, tried to look for it in Slack or with the tutors in Code Institute
+and they couldnt help either, so I want to add to my README file.
+
 ![alt text](static/media/css_validation.JPG "CSS validation")
 ![alt text](static/images/jshint.jpg "javascript validation")
 
 ----
-**Bugs**
 
-+ **Bug-01:** checkout migrations did not work  because the migration file was trying to remove a field named sku from one of the previous migrations, I had to delete those lines and run the migrations again,  I had to backup my database in case the migration failed with the dumpdata command
-
-+ **Bug-02:** Checkout_order error - I forgot to run migrations for the order model.
-
-+ **Bug-03:** Change category error - I updated one category from the admin panel but the link on the navbar will not redirect,this was because the URL was not updated with the same name as the category, it had the old name. 
 
 Deployment
 ----------
@@ -386,6 +385,7 @@ To achieve this follow these steps:
 > For more info on how to clone a repository check [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 ### Setup local deployment
+
 1. **Clone or fork this repository (see above)**.
 2. **Install the requirements by typing:**  
         ```
@@ -419,7 +419,8 @@ To achieve this follow these steps:
             os.environ["DEVELOPMENT"] = 'True'
         ```  
     > See [above](#setup-stripe) how to get your stripe keys.  
-    > Tip: use this [key generator](https://miniwebtool.com/django-secret-key-generator/)   
+    > Tip: use this [key generator](https://miniwebtool.com/django-secret-key-generator/)  
+
 4. **Migrate the database models**
     - Check migrations
     ```
@@ -445,3 +446,54 @@ To achieve this follow these steps:
     - Add a username and password.   
 7.**Run the app.**
    - In the terminal, type: `python3 <your python file name>.py`  
+
+   **Setup Stripe**
+    1. Add Stripe keys to Config Var
+        - Login to Stripe or create and [account](https://dashboard.stripe.com/register).
+        - Click developers and then API Keys.
+        - Copy the public and secret key and add them to Config Vars in Heroku.  
+        ```
+        STRIPE_PUBLIC_KEY = <your Stripe public key>
+        STRIPE_SECRET_KEY = <your Stripe secret key>
+        ```  
+    2. Create a webhook endpoint
+        - In Stripe - Developers click 'webhooks'.
+        - Click 'Add endpoint'.
+        - Enter your heroku url and add /checkout/wh/ to it.
+        ```
+        https://<projectname>.herokuapp.com/checkout/wh/
+        ```  
+        - Select 'receive all events' and click 'Add endpoint.
+        - Scroll down to 'Signing secret' and click 'Reveal signing secret'.
+        - Copy the signing secret and add to the Config Vars in Heroku.
+
+**Bugs**
+
++ **Bug-01:** checkout migrations error -  It was working because the migration file was trying to remove a field named sku from one of the previous migrations, I had to delete those lines and run the migrations again,  I had to backup my database in case the migration failed with the dumpdata command.
+
++ **Bug-02:** Checkout_order error - I forgot to run migrations for the order model.
+
++ **Bug-03:** Change category error - I updated one category from the admin panel but the link on the navbar will not redirect,this was because the URL was not updated with the same name as the category, it had the old name. 
+
+
+Acknoweledments
+-------
+
+**Code used**
+
+Back to top smooth button idea from link below:
+https://mdbootstrap.com/snippets/standard/mdbootstrap/2964350#css-tab-view
+https://moderncss.dev/pure-css-smooth-scroll-back-to-top/
+
+I took color ideas for the site from the link below
+https://visme.co/blog/website-color-schemes/
+
+The deploymnet tutorial for heroku it was thoroughly explained in the below project so I copied from there
+https://github.com/chizzletaz/SpaceTravelAgency
+
+I took the project boutique as an example to create my website.
+
+Stackoverflow and slack comunity for general queries
+
+I will like to thank the support of my mentor Antonio rodriguez and all tutors in Code institute
+for their invaluable input.
