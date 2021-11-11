@@ -3,11 +3,18 @@ html {
 }
 
 body {
-    background: url('/media/embroidery10.jpeg') no-repeat center center fixed;
+    
     background-color: #defdf1;
     background-size: cover;
     height: calc(100vh - 164px);
     font-family: 'Sarabun';
+}
+
+/*carousel*/
+
+.carousel-inner > .carousel-item > img {
+    max-width: 100% !important;
+    height: auto !important;
 }
 
 /* from Bulma */
@@ -254,21 +261,51 @@ input[name='q']::placeholder {
 
 
 
-/*----------buttons categories -----------*/ 
+/*----------Footer-----------*/ 
 
-#footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Height of the footer*/ 
-    height: 30px;
-    font-weight: 600;
-    font-size: medium;
-    
+.text-center{
+    margin-top: 14px;
 }
-#color{
-    background-color: #defdf1;
-}
+
+.footer-basic {
+    padding:40px 0;
+    background-color:#defdf1;
+    color:#4b4c4d;
+  }
+  
+  
+  .footer-basic .social {
+    text-align:center;
+    padding-bottom:25px;
+  }
+  
+  .footer-basic .social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+  }
+  
+  .footer-basic .social > a:hover {
+    opacity:0.9;
+  }
+  
+  .footer-basic .copyright {
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
+  }
+  
+  /* Credit to https://epicbootstrap.com/snippets/footer-basic */
 
 /* -------------------------------- Media Queries */
 

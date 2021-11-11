@@ -479,6 +479,11 @@ https://visme.co/blog/website-color-schemes/
 The deploymnet tutorial for heroku it was thoroughly explained in the below project so I copied it from there
 https://github.com/chizzletaz/SpaceTravelAgency
 
+The footer idea was taking from here
+https://epicbootstrap.com/snippets/footer-basic
+
+Carousel idea was taken from boostrap
+
 I took the project boutique as an example to create my website.
 
 Stackoverflow and slack comunity for general queries
