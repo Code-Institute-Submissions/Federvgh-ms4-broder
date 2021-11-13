@@ -72,8 +72,8 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link"  data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <a class="text-black nav-link" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0">My Account</p>
@@ -145,12 +145,43 @@
     {% endblock %}
 
     {% block content %}
+
     {% endblock %}
+    <footer class="container-fluid">
+        <div class="row spacing footer-row">
+            <div class="col-12 col-lg-4 text-center">
+                <h5>About me</h5>
+                <p> "I am an embroiderer with more than 20 years of experiencie,I create and
+                    embroid original designs on clothing for people to wear and also art to decorate"
+                </p>
+            </div>
+            <div class="col-12 col-lg-4 text-center">
+                <h5>Contact</h5>
+                <p><i class="fas fa-phone"></i> 0830307585</p>
+                <p><i class="fas fa-envelope-open"></i> info@broder.co.uk</p>
+                <p><i class="fas fa-map-marker-alt"></i> 51 Terenure Road, Dublin</p>
+            </div>
+            <div class="col-12 col-lg-4 text-center">
+                <h5> Follow Me</h5>
+                <div class="footer-basic">
+                    <div class="social">
+                        <a href="https://www.instagram.com/"><i class="icon ion-social-instagram"></i></a>
+                        <a href="https://ar.pinterest.com/"><i class="icon ion-social-pinterest"></i></a>
+                        <a href="https://twitter.com/?lang=en"><i class="icon ion-social-twitter"></i></a>
+                        <a href="https://www.facebook.com/"><i class="icon ion-social-facebook"></i></a>
+                    </div>
+            </div>
+
+        </div>
+    </footer>
 
     {% block postloadjs %}
     <script>
         $('.toast').toast('show');
     </script>
+
+
+
     {% endblock %}
 
 

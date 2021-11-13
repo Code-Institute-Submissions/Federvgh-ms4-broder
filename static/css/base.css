@@ -262,6 +262,9 @@ input[name='q']::placeholder {
 
 
 /*----------Footer-----------*/ 
+.footer-row{
+    margin-top: 40px;
+}
 
 .text-center{
     margin-top: 14px;
