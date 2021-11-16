@@ -60,8 +60,8 @@ As a frequent user, I want:
 ### User Journey
 
 1. User's Journey starts at the homepage. 
-1. They are presented with a picture hat hints at what the site it’s about.
-1. On the bottom they can see and “About” description
+1. They are presented with a carousel with picture that hints at what the site it’s about.
+1. On the bottom they can see an “About” description, contact information and the social media icons to follow the artist's work.
 
 ### Design
 
@@ -106,13 +106,15 @@ This database uses a SQL database through PostgreSQL. They were originally built
 
 ## Navigation
 
-The navbar at the top of the page has search element in the middle, a logo on the left side
-and on the right side a user icon and a basket icon that shows the amount to spend for the selceted products. 
-The User Icon will display a profile option if the user is logged in if not, it will show a "login" or "register" option
-In the body of the page there is an image that suggest what the website is about, and the title or "brand" of the website
-is "Broder" which means embroidery in french.
-The footer shows a little about artist description on the right and a short text on the left of what the site provides.
-The footer is only visible in the index page, this was made on purpose to make the website more user friendly for purchases.
+On the top in the middle there is a search bar that can be used to find all the products available on the website, the name of the site is on the left side and on the right side a user icon and a basket icon that shows the amount to spend for the selected products. The User Icon will display a profile option if the user is logged in if not, it will show a "login" or "register" option. The navbar has 5 categories "All products", "Towels", " Clothes", "Masks", "Artistic Designs" clicking on any of them will
+take the user to the assigned category, if hyou select "All Products" a dropdown menu will appear which will give the option
+to show all products available or if the user want to, show all products by price or by category.
+Which ever category you select, once you see the products, above on the right you can order them by price, name or category.
+In the middle of the main page there is a carousel of images with needles, threads, and embroidery equipment that makes it clear what the website is about. I used the name "Broder" which means embroidery in french. 
+There is a "back to top" button at the bottom of the site for ease of navigation. 
+The footer shows a little about artist description on the left in the middle the contact information, and on the right 
+the social media icons if they want to follow the artists work.
+The footer is visible on the entire website.
 
 ## Features Left to Implement
 
@@ -222,6 +224,7 @@ and they couldnt help either, so I want to add to my README file.
 + **Bug-01:** checkout migrations error -  It was working because the migration file was trying to remove a field named sku from one of the previous migrations, I had to delete those lines and run the migrations again,  I had to backup my database in case the migration failed with the dumpdata command.  
 
 + **Bug-02:** Change category error - I updated one category from the admin panel but the link on the navbar will not redirect,this was because the URL was not updated with the same name as the category, it had the old name.
+
 
 ----
 
