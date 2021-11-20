@@ -50,7 +50,7 @@ As a returning visitor, I want:
 choose to.
 - To be able to reset my password.
 - To be able to view all my purchases from my profile.
-- To be able to save my details for future purchases.
+- To be able to save and update my details for future purchases.
 
 As a frequent user, I want:
 - To sign in and view my purchases.
@@ -160,7 +160,7 @@ A wider descritpion of what the artist does how to contact her, pictures and vid
 1. [Balsamiq](https://balsamiq.com/) - Wireframes- [Description](#description)
 
 
-Testing
+Basic Testing
 -------
 
 1. All links on the website connect to the assigned location.
@@ -170,6 +170,43 @@ Testing
 5. All browsers were tested on pc, mobile devices and tablets.
 6. The website was tested by multiple users varied devices performed by family and friends and suggestions were made to improve
 functionality and UX design, like color, access, ease to use.
+
+## Security
+All pages were tested with a non-admin account to check the access to the website. This was tested in several ways,
+for example by copying the link to the admin profile when i was logged as admin and copying the link to an incognito
+browser,  it displays a user and password to be able to do this. Login in as a normal user you dont see the option to edit
+or delete content from the website as when you are logged as admin.
+
+## Navbar Search Bar
+
+Searching for a product on the site brings up relevant products. This was tested by using keywords for products, product categories or words in the description of the product, also an error message shown if the search query did not find any results.
+
+## First Time Users
+
+*To quickly be able to understand the purpose of the website*
+-	Users are shown an About in the home page, images in the carousel and social media links on the footer 
+
+*To be able to register, sign in and sign out with ease.*
+-   The user icon is on the top right, login and register option appear when you click on it.
+
+*To navigate through the site and easily find the products I want.*
+-	The Navbar shows all categories you can browse without having to register, and aslo there is a search bar
+to look for something specific. 
+
+## Returning Users
+
+*To sign in as easily as I did on my first visit and remember my credentials*
+-  There is a check box to "remember sign in" after first logon.
+
+*To be able to reset my password.*
+-  If you forgot your password you can just click forgot password and type your email and a reset link will be sent to your account.
+
+*To be able to view all my purchases from my profile.*
+-  When a user is logged in, if they navigate to their user profile page they will be able to see their order history.
+They can click on the purchase order and they will see a detailed description of the orther.
+
+*To be able to save and update my details for future purchases*
+-  On the user profile they have the hability to save and update their personal information.
 
 
 OS the site was tested on:
