@@ -2,7 +2,7 @@
 
 ==================
 
-![Am I responsive image](static/media/home_page.JPG "Responsive design for Tango Dictionary")
+![Am I responsive image](static/media/Responsive.PNG "Responsive design for Tango Dictionary")
 
 # Table of Contents
 
@@ -260,6 +260,10 @@ and they couldnt help either, so I want to add to my README file.
 + **Bug-01:** checkout migrations error -  It was working because the migration file was trying to remove a field named sku from one of the previous migrations, I had to delete those lines and run the migrations again,  I had to backup my database in case the migration failed with the dumpdata command.  
 
 + **Bug-02:** Change category error - I updated one category from the admin panel but the link on the navbar will not redirect,this was because the URL was not updated with the same name as the category, it had the old name.
+
++ **Bug-03:** Some images were not loading after heroku deployment even after been uploaded to aws correctly so i changed the path in gitpod to the aws bucket path were the images were uploaded and that fixed the issue.
+
++ **Bug-04:** Heroku deployment error after installing django extensions, this was because i forgot to freeze the requirements, after i freeze the requirements and redeploy to heroku there were no errors. 
 
 
 ----
