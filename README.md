@@ -100,15 +100,9 @@ As a frequent user, I want:
 
 ## Database Design
 
-This database uses a SQL database through PostgreSQL. They were originally built in JSON files.
+The final data schema was exported directly fom the Django model using django-extensions, pydot and GraphViz. The final data schema is shown below:
 
-### Categories Database
-
-![JSON file screenshot of categories](static/media/categories.JPG)
-
-### Products Database
-
-![JSON file screenshot of products](static/media/products.JPG)
+![DB Schema](media/my_project_visualized.png)
 
 ## Navigation
 
