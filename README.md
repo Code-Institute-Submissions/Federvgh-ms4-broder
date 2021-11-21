@@ -32,10 +32,16 @@
 ## General
 
 Broder is an e-commerce website built using Python and Django. 
+The target audience of the site is anybody interested in Art and fashion as the artist of the site works on clothes
+and also works of art.
 The site is fully responsive on all modern screen sizes, and it allows a user to add and remove products
-to a basket and buy them using stripe as payment method. This is for education purposes so the credit card is
-not linked to a bank account, you can use 4242 4242 42424 4242 and any cvc to test and you will receive an email
-with the "fake" purchase details.
+to a basket and buy them using stripe as payment method. This is for education purposes so for testing the 
+checkout please use the following card number and details:
+
+Card Number: 4242 4242 4242 4242
+Month/Year : 04 / 24
+CVC: 222
+ZIP: 44444
 The live site can be viewed [here](https://ms4-broder.herokuapp.com/).
 
 ### User Stories
@@ -118,9 +124,8 @@ The footer is visible on the entire website.
 
 ## Features Left to Implement
 
-I would have liked to have a logo, I didn’t have time to design it.
 On one of the tabs I will like to add some pictures of the artist doing works from start to finish.
-A wider descritpion of what the artist does how to contact her, pictures and videos of his work on a different section.
+A wider descritpion of what the artist does, pictures and videos of his work on a different section.
 
 ## Technologies
 
