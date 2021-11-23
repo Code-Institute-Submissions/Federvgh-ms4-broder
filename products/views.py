@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category
 
-from .forms import ProductForm
+from .forms import ProductForm, ReviewAdd
 
 
 def all_products(request):
@@ -67,11 +67,12 @@ def product_detail(request, product_id):
     """ A view to show individual products """
 
     product = get_object_or_404(Product, pk=product_id)
-
+    reviewForm=ReviewAdd()
     context = {
-        'product': product,
+        'product': product, 
+         'form':reviewForm,
     }
-
+    
     return render(request, 'products/product_detail.html', context)
 
 
@@ -147,3 +148,5 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
