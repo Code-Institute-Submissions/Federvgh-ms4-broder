@@ -105,14 +105,18 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
+                                            <form method="post" id="addForm" action="{% url 'save-review' product.id %}">
+                                                {% csrf_token %}
                                             <table class="table table-bordered">
                                                 {{form.as_table}}
                                                 <tr>
                                                     <td colspan="2">
                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                   <input type="reset" class="btn btn-dark" value="Reset" id="reset" />
                                                 </td>
-                                                </tr>
-                                            </table>
+                                            </tr>
+                                        </table>
+                                        <p class="ajaxRes"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -125,8 +129,26 @@
         </div>
     </div>
 {% endblock %}
-
 {% block postloadjs %}
 {{ block.super }}
+<script>
+    // Product Review Save
+    $("#addForm").submit(function(e){
+        $.ajax({
+            data:$(this).serialize(),
+            method:$(this).attr('method'),
+            url:$(this).attr('action'),
+            dataType:'json',
+            success:function(res){
+                if(res.bool==true){
+                $(".ajaxRes").html('Data has been added');
+                $("#reset").trigger('click');
+                }
+            }
+        });
+        e.preventDefault();
+    });
+    
+    </script>
 {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}

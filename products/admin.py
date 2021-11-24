@@ -24,6 +24,7 @@ class ProductReviewAdmin(admin.ModelAdmin):
         'product',
         'review_text',
         'review_rating',
+        'get_review_rating',
     )
 
 

@@ -3,7 +3,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category
+from .models import Product, Category, ProductReview
+from django.http import JsonResponse
 
 from .forms import ProductForm, ReviewAdd
 
@@ -150,3 +151,15 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
+# Save Review
+def save_review(request,product_id):
+	product=Product.objects.get(pk=product_id)
+	user=request.user
+	review=ProductReview.objects.create(
+		user=user,
+		product=product,
+		review_text=request.POST['review_text'],
+		review_rating=request.POST['review_rating'],
+		)
+
+	return JsonResponse({'bool':True})
