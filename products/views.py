@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
+from django.db.models import Q, Avg
 from django.db.models.functions import Lower
 from .models import Product, Category, ProductReview
-from django.http import JsonResponse
+from django.http import JsonResponse,HttpResponseRedirect
+
+
 
 from .forms import ProductForm, ReviewAdd
 
@@ -67,13 +69,36 @@ def all_products(request):
 def product_detail(request, product_id):
     """ A view to show individual products """
 
+
     product = get_object_or_404(Product, pk=product_id)
     reviewForm=ReviewAdd()
+    
+    # Check
+
+    canAdd=True
+    reviewCheck=ProductReview.objects.filter( product=product).count()
+    if request.user.is_authenticated:
+        if reviewCheck > 0:
+            canAdd=False
+           
+    # End
+
+    # Fetch reviews
+    reviews=ProductReview.objects.filter(product=product)   
+    # End   
+    
+    # Fetch avg rating for reviews
+    avg_reviews=ProductReview.objects.filter(product=product).aggregate(avg_rating=Avg('review_rating'))
+    # End
+
     context = {
         'product': product, 
          'form':reviewForm,
+         'canAdd':canAdd,
+         'reviews':reviews,
+         'avg_reviews':avg_reviews,
+          
     }
-    
     return render(request, 'products/product_detail.html', context)
 
 
@@ -161,5 +186,14 @@ def save_review(request,product_id):
 		review_text=request.POST['review_text'],
 		review_rating=request.POST['review_rating'],
 		)
+	data={
+		'user':user.username,
+		'review_text':request.POST['review_text'],
+		'review_rating':request.POST['review_rating']
+	}
 
-	return JsonResponse({'bool':True})
+	# Fetch avg rating for reviews
+	avg_reviews=ProductReview.objects.filter(product=product).aggregate(avg_rating=Avg('review_rating'))
+	# End    
+
+	return JsonResponse({'bool':True, 'data':data,'avg_reviews':avg_reviews})

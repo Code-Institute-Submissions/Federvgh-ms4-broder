@@ -88,10 +88,12 @@
                         </div>
                     </form>
                     <div class="col-md-6">
-                        <h3 class="my-3">Reviews - <span class="avg-rating"></span>/5 <i class="fa fa-star text-warning"></i>
+                        <h5 class="my-3">Reviews - <span class="avg-rating">{{avg_reviews.avg_rating}}</span>/5 <i class="fa fa-star text-warning"></i>
                             {% if user.is_authenticated %}
+                            {% if canAdd %}
                             <button data-toggle="modal" data-target="#productReview" type="button" class="btn btn-warning btn-sm float-right reviewBtn">Add Review</button>
-                            {% endif %}</h3>
+                            {% endif %}
+                            {% endif %}</h5>
                             <!-- Product review -->
                             {% if user.is_authenticated %}
                             <div class="modal fade" id="productReview" tabindex="-1" role="dialog"
@@ -121,12 +123,37 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
                             {% endif %}
                                   <!-- Product review end-->
-                        </h3>
-                </div>
-            </div>
+                        
+
+			<div class="card">
+				<div class="card-body review-list" style="max-height: 400px; overflow: auto;">
+					<!-- Detail -->
+					{% if reviews %}
+						{% for review in reviews %}
+						<blockquote class="blockquote text-right">
+						  <small>{{review.review_text}}</small>
+						  <footer class="blockquote-footer">{{review.user}} 
+						  	<cite title="Source Title">
+						  		{% for star in review.review_rating|ljust:review.review_rating %}
+						  		<i class="fa fa-star text-warning"></i>
+								{% endfor %}
+						  	</cite>
+						  </footer>
+						</blockquote>
+						<hr />
+						{% endfor %}
+					{% else %}
+						<p class="no-data">Add First Review</p>
+					{% endif %}
+				</div>
+			</div>
         </div>
+    </div>
+    </div>
+    </div>
     </div>
 {% endblock %}
 {% block postloadjs %}
@@ -143,6 +170,31 @@
                 if(res.bool==true){
                 $(".ajaxRes").html('Data has been added');
                 $("#reset").trigger('click');
+    			// Hide Button
+				$(".reviewBtn").hide();
+				// End
+
+				// create data for review
+				var _html='<blockquote class="blockquote text-right">';
+				_html+='<small>'+res.data.review_text+'</small>';
+				_html+='<footer class="blockquote-footer">'+res.data.user;
+				_html+='<cite title="Source Title">';
+				_html+='</cite>';
+				_html+='</footer>';
+				_html+='</blockquote>';
+				_html+='</hr>';
+
+				$(".no-data").hide();
+
+				// Prepend Data
+				$(".review-list").prepend(_html);
+
+				// Hide Modal
+				$("#productReview").modal('hide');
+
+				// AVg Rating
+				$(".avg-rating").text(res.avg_reviews.avg_rating.toFixed(1))                
+
                 }
             }
         });
