@@ -72,12 +72,11 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     reviewForm=ReviewAdd()
-    
     # Check
-
-    canAdd=True
-    reviewCheck=ProductReview.objects.filter( product=product).count()
+    canAdd = False
     if request.user.is_authenticated:
+        canAdd = True
+        reviewCheck=ProductReview.objects.filter(user=request.user, product=product).count()
         if reviewCheck > 0:
             canAdd=False
            
