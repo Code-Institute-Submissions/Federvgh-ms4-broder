@@ -85,9 +85,15 @@ def product_detail(request, product_id):
     # Fetch reviews
     reviews=ProductReview.objects.filter(product=product)   
     # End   
-    
+    avg_reviews = 0
     # Fetch avg rating for reviews
-    avg_reviews=ProductReview.objects.filter(product=product).aggregate(avg_rating=Avg('review_rating'))
+    if len(list(reviews)) > 0:
+        avg_rating = 0
+        sum_rating = 0
+        for review in reviews:
+            sum_rating = sum_rating + int(review.review_rating)
+        avg_rating = sum_rating/len(reviews)
+        # avg_reviews=ProductReview.objects.filter(product=product).aggregate(avg_rating=Avg('review_rating'))
     # End
 
     context = {
@@ -176,23 +182,22 @@ def delete_product(request, product_id):
 
 
 # Save Review
-def save_review(request,product_id):
-	product=Product.objects.get(pk=product_id)
-	user=request.user
-	review=ProductReview.objects.create(
-		user=user,
-		product=product,
-		review_text=request.POST['review_text'],
-		review_rating=request.POST['review_rating'],
-		)
-	data={
-		'user':user.username,
-		'review_text':request.POST['review_text'],
-		'review_rating':request.POST['review_rating']
-	}
-
-	# Fetch avg rating for reviews
-	avg_reviews=ProductReview.objects.filter(product=product).aggregate(avg_rating=Avg('review_rating'))
-	# End    
-
-	return JsonResponse({'bool':True, 'data':data,'avg_reviews':avg_reviews})
+def save_review(request, product_id):
+    product = Product.objects.get(pk=product_id)
+    user = request.user
+    review = ProductReview.objects.create(user=user, product=product,
+                review_text=request.POST['review_text'],
+                review_rating=request.POST['review_rating'],
+            )
+    data = {
+        'user':user.username,
+        'review_text':request.POST['review_text'],
+        'review_rating':request.POST['review_rating']
+    }
+    reviews=ProductReview.objects.filter(product=product)
+    avg_rating = 0
+    sum_rating = 0
+    for review in reviews:
+        sum_rating = sum_rating + int(review.review_rating)
+    avg_rating = sum_rating/len(reviews)
+    return JsonResponse({'bool':True, 'data':data,'avg_reviews':avg_rating})
