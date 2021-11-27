@@ -76,7 +76,7 @@ As a frequent user, I want:
 - Typography
     - I used 'Sarabun' as a font 
 - Imagery
-    - Most of the images were downloaded from pinterest with the idea of background ion white or similar 
+    - Most of the images were downloaded from pinterest with the idea of background either white or similar 
 
 ### Features
 
@@ -107,7 +107,7 @@ The final data schema was exported directly fom the Django model using django-ex
 ## Navigation
 
 On the top in the middle there is a search bar that can be used to find all the products available on the website, the name of the site is on the left side and on the right side a user icon and a basket icon that shows the amount to spend for the selected products. The User Icon will display a profile option if the user is logged in if not, it will show a "login" or "register" option. The navbar has 5 categories "All products", "Towels", " Clothes", "Masks", "Artistic Designs" clicking on any of them will
-take the user to the assigned category, if hyou select "All Products" a dropdown menu will appear which will give the option
+take the user to the assigned category, if you select "All Products" a dropdown menu will appear which will give the option
 to show all products available or if the user want to, show all products by price or by category.
 Which ever category you select, once you see the products, above on the right you can order them by price, name or category.
 In the middle of the main page there is a carousel of images with needles, threads, and embroidery equipment that makes it clear what the website is about. I used the name "Broder" which means embroidery in french. 
@@ -183,7 +183,7 @@ Searching for a product on the site brings up relevant products. This was tested
 ## First Time Users
 
 *To quickly be able to understand the purpose of the website*
--	Users are shown an About in the home page, images in the carousel and social media links on the footer 
+-	Users are shown an "About me" in the home page, images in the carousel and social media links on the footer 
 
 *To be able to register, sign in and sign out with ease.*
 -   The user icon is on the top right, login and register option appear when you click on it.
@@ -249,7 +249,7 @@ Javascript validated via https://www.jslint.com/
 **Results**
 ![alt text](static/media/html_validation.JPG "Html validation")
 
-I was not able to fix this Html error, tried to look for it in Slack or with the tutors in Code Institute
+I was not able to fix this Html error, tried to look for it in Slack or with the tutors
 and they couldnt help either, so I want to add to my README file.
 
 ![alt text](static/media/css_validation.JPG "CSS validation")
@@ -264,6 +264,9 @@ and they couldnt help either, so I want to add to my README file.
 + **Bug-03:** Some images were not loading after heroku deployment even after been uploaded to aws correctly so i changed the path in gitpod to the aws bucket path were the images were uploaded and that fixed the issue.
 
 + **Bug-04:** Heroku deployment error after installing django extensions, this was because i forgot to freeze the requirements, after i freeze the requirements and redeploy to heroku there were no errors. 
+
++ **Bug-05:** I had a 500 error when accessing a product when the site was already deployed in heroku,
+ there was a problem with my database so I had to back up my data ,reset the database from heroku, load it again and run migrations to fix it. 
 
 
 ----
@@ -284,12 +287,9 @@ To deploy this project you will need to set up accounts with the following servi
 
 1. **Create a Heroku App**
     1. Create a new app by clicking the ‘New’ button.
-    ![new Heroku app button](static/media/new-app.png)
     2. Give a unique name and set region to your nearest region.
-    ![name and region input](static/media/name-region.png)
     3. Click ‘Create App’.
     4. Click on the 'Resources' tab, in Add-ons type: postgress and choose 'Heroku Postgres'.
-    ![postgres add-on](static/media/postgress.png)  
     5. For plan name choose the free plan and click submit form.
 
 2. **Setup the Postgres Database**
@@ -397,28 +397,21 @@ To deploy this project you will need to set up accounts with the following servi
 
 8. **Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**  
     1. Go to the Deploy tab.  
-    ![deploy tab](static/media/deploy.png)  
     2. Under 'Deployment method', Click on 'Connect to GitHub'.
-    ![connect to github button](static/media/connect-to-github.png)
     3. Under 'Connect to GitHub', enter the GitHub repository name and click ‘Search’ and click 'Connect'.
-    ![connect repository name](static/media/search-repo.png)
     4. Scroll down to Automatic deploys and click the ‘Enable Automatic Deploys’ button.  
-    ![enable automatic deploy button](static/media/automatic-deploy.png)
 
     ### Forking this GitHub Repository
 A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 To achieve this follow these steps:
 1. Login to GitHub and follow this link to [the GitHub Repository](https://github.com/Federvgh/ms4-broder).
 2. At the top right of the page, click on the fork button.  
-![fork button](static/media/forking.png)
 3. You now have a copy of the repository in your GitHub account.
 
 ### Cloning this GitHub repository
-1. Log in to GitHub and follow this link to [the GitHub Repository](https://github.com/Federvgh/ms4-broder)
+1. Log in to GitHub and follow this link to 
 2. Click on the ‘Code’ button 
-![Code button](static/media/github-clone.png)
 3. To clone using HTTPS, copy the link that is displayed by clicking on the copy icon 
-![save icon](static/media/github-copy.png).
 4. Open a terminal in your preferred IDE (e.g. VSCode or Atom)
 5. Use  the ‘git clone’ command and add the link that you copied in step 3.
 6. Or for VSCode: click 'Explorer' or 'Shift + CMD + E'. 
@@ -524,6 +517,9 @@ https://github.com/chizzletaz/SpaceTravelAgency
 
 The footer idea was taking from here
 https://epicbootstrap.com/snippets/footer-basic
+
+The review idea was based on a project from the below youtube channel
+https://www.youtube.com/playlist?list=PLgnySyq8qZmrxJvJbZC1eb7PD4bu0a-sB
 
 Carousel idea was taken from boostrap
 
