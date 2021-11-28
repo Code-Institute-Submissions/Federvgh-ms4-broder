@@ -11,8 +11,6 @@
 * [Features](#Features)
 * [WireFrames](#WireFrames)
 * [Database Design](#database-design)
-
-- [Technologies](#technologies)
  - [Testing](#testing)
      - Browser Compatibility
      - OS Compatibility
@@ -82,11 +80,15 @@ As a frequent user, I want:
 
 - The navigation menu will offer users a number of site locations depending on their user access. 
 - Pay for products using Stripe.
-- View products from the user personal account.
 - Allauth user accounts.
 - CRUD Functionality.
 – Search bar to query the database of products.
 – Displays shopper account details and order history   
+- Responsive site on all devices.
+- Fixed navbar to be seen at all times. 
+- Footer on all pages.
+- Collapsible navbar triggered at tablets and mobile devices. 
+- Reset password capabilities
 
 ### WireFrames
 
@@ -97,6 +99,7 @@ As a frequent user, I want:
 [Selected Products](static/media/selected_product.jpg)<br>
 [Products](static/media/products.jpg)<br>
 
+The site appearance has changed while working on the project, so the original design wireframes might look different.
 
 ## Database Design
 
@@ -116,7 +119,6 @@ The footer shows a little about artist description on the left in the middle the
 the social media icons if they want to follow the artists work.
 The footer is visible on the entire website.
 
-## Features
 
 ### Languages
 
@@ -324,6 +326,10 @@ CSS validation with [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org
 
 Javascript validated via https://www.jslint.com/
 
+----
+**PEP8 Validation**
+Pep8 validation was done with http://pep8online.com/ and with autopep8 
+
 
 **Results**
 ![alt text](static/media/html_validation.JPG "Html validation")
@@ -346,6 +352,9 @@ and they couldnt help either, so I want to add to my README file.
 
 + **Bug-05:** I had a 500 error when accessing a product when the site was already deployed in heroku,
  there was a problem with my database so I had to back up my data ,reset the database from heroku, load it again and run migrations to fix it. 
+
+ + **Bug-06:** There is an issue with the grand total, it shows properly before the purchase but after the purcahse it shows the 
+ grand total as 0, its working on gitpod but for some reason not in heroku. I was not able to fix this.  
 
 
 ----
