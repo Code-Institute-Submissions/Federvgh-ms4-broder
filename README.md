@@ -116,12 +116,7 @@ The footer shows a little about artist description on the left in the middle the
 the social media icons if they want to follow the artists work.
 The footer is visible on the entire website.
 
-## Features Left to Implement
-
-On one of the tabs I will like to add some pictures of the artist doing works from start to finish.
-A wider descritpion of what the artist does, pictures and videos of his work on a different section.
-
-## Technologies
+## Features
 
 ### Languages
 
@@ -158,6 +153,13 @@ A wider descritpion of what the artist does, pictures and videos of his work on 
 
 1. [Balsamiq](https://balsamiq.com/) - Wireframes- [Description](#description)
 
+## Features Left to Implement
+
+On one of the tabs I will like to add some pictures of the artist doing works from start to finish.
+A wider descritpion of what the artist does, pictures and videos of his work on a different section.
+
+
+Testing
 
 Basic Testing
 -------
@@ -179,6 +181,75 @@ or delete content from the website as when you are logged as admin.
 ## Navbar Search Bar
 
 Searching for a product on the site brings up relevant products. This was tested by using keywords for products, product categories or words in the description of the product, also an error message shown if the search query did not find any results.
+
+### Home 
+-	Carousel Images displayed, responsive on desktop and mobile views
+-	Buttons on carousel images work correctly and switch automatically. Images are responsive to mobile
+devices.
+-	Footer on bottom displayed correctly, divided in 3 sections, about, contact and social media.
+
+### Products
+-	Product pages shows each category according to what is selected
+-	Sort By option dropdown works correctly and has been tested for all options to make sure the the views are changed depending on the criteria selected
+-	Category tag links, and edit/delete links for admins all work as intended.
+-	If the image is clicked, the user is taken to that products individual detail page.
+
+### Product Detail
+-	Product images are all correct, along with the title and description of the product.
+-	Product information is correctly shown to the user, such as price, description etc.
+-	Edit/Delete links work only for admin.
+-	Quantity selector works correctly, user can change the amount of the product using the up/down arrows within the box, at the sides of the box and by using the up/down arrow keys on the users keyboard.
+-	Keep Shopping button hover works, and takes the user back to the products page
+-	Add To Bag button adds the product to the users shopping bag. A pop up screen alert will appears with
+any updates done on the product like changing the amount. A mini view of the users shopping bag will display
+as well. This was tested with all the products of the website.
+-	Below the add to bag button you can see the reviews, if you are logged in you can make a review, if you have
+already done a review for the product the add review button is hidden, this was done with the idea to prevent users
+to add more than one review. Reviews can also be seen without been logged in.
+-	If form is not filled in correctly, a warning will show on the section of the form that is not correct. This was tested by leaving sections of the form blank and trying to submit. All input focus colours are correct
+
+### Product Add/Edit
+-	Removing an image works as intended
+-	Adding an image works as intended
+-	Add product button successfully adds a product to the site
+-	Edit product button successfully amends the product information and/or image
+
+### Shopping Bag
+-	Product details are correctly displayed, "keep shopping" and "secure checkout" buttons displaying at the bottom right
+-	Quantity selector works correctly and when the update button is clicked, the quantity updates
+-	Subtotal updates based on quantity
+-	Clicking the remove button removes the item successfully from the shopping bag, and updates the total cost of the shopping bag contents
+-	Keep Shopping button sends the user back to the products page when clicked.
+-	Secure Checkout button takes the user to the Checkout page, and correctly shows products that are in the shopping bag. This includes updated quantities.
+
+### Checkout
+-	Order Summary is correctly displayed, and shows the products that were in the shopping bag
+-	Checkout form is correctly displayed to the user
+-	If the user is logged in, checkbox is displayed for the user to save this address to their profile. If they click this checkbox and the order is completed, the delivery details are added to the profile page
+-	If user is not logged in, as long as they provide all the required fields the purchase can be done.
+-	I have tested this by creating new accounts, checking this box and checking the profile page after completing the order
+-	Stripe default card number used for payments. No payment issues found
+-	If incorrect card details are entered, an error is displayed to the user
+-	If part of the form is left empty the order will not process and takes the user to the empty section of the form
+-	Complete Order Securely button works and processes the order and payment for the user.
+
+### Register
+-	Register page allows a user to register an account using their email address
+-	It will then send the user an email to confirm their email address and complete the registration process
+-	Once the user has confirmed their email, they can log in and use the site as a registered user
+-	I have tested this by creating accounts with different email addresses, all worked as predicted
+
+### Sign In
+-	User can sign in using the email address or username they signed up with and the password they chose
+-	A checkbox can be ticked that will save the users information for future visits
+-	If a user has forgotten their password, the option is there for them to click it, and run through the forgotten password journey that allows them to reset it. This has been tested with multiple accounts and works
+-	If no user exists with those details, an error will display above the log in form to inform the user of that
+
+### Profile
+-	Order history display is correct and shows all past orders
+-	If the order number is clicked, the user can see all the information in that order
+-	Default Delivery Information form works as intended, and auto-fills if it has been selected in the checkout process
+-	Updating the address works correctly, and is reflected both on the profile page and the checkout
 
 ## First Time Users
 
@@ -206,6 +277,8 @@ They can click on the purchase order and they will see a detailed description of
 
 *To be able to save and update my details for future purchases*
 -  On the user profile they have the hability to save and update their personal information.
+
+
 
 
 OS the site was tested on:
