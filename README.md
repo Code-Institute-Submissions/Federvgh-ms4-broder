@@ -151,17 +151,16 @@ The footer is visible on the entire website.
 
 1. [Font Awesome](https://fontawesome.com/) - Icons
 
-1. [Balsamiq](https://balsamiq.com/) - Wireframes- [Description](#description)
+1. [Balsamiq](https://balsamiq.com/) - Wireframes
 
 ## Features Left to Implement
 
 On one of the tabs I will like to add some pictures of the artist doing works from start to finish.
 A wider descritpion of what the artist does, pictures and videos of his work on a different section.
+Average rating left to implement.
 
 
 Testing
-
-Basic Testing
 -------
 
 1. All links on the website connect to the assigned location.
@@ -206,7 +205,7 @@ as well. This was tested with all the products of the website.
 -	Below the add to bag button you can see the reviews, if you are logged in you can make a review, if you have
 already done a review for the product the add review button is hidden, this was done with the idea to prevent users
 to add more than one review. Reviews can also be seen without been logged in.
--	If form is not filled in correctly, a warning will show on the section of the form that is not correct. This was tested by leaving sections of the form blank and trying to submit. All input focus colours are correct
+-	If form is not filled in correctly, a warning will show on the section of the form that is not correct. This was tested by leaving sections of the form blank and trying to submit.
 
 ### Product Add/Edit
 -	Removing an image works as intended
@@ -227,7 +226,6 @@ to add more than one review. Reviews can also be seen without been logged in.
 -	Checkout form is correctly displayed to the user
 -	If the user is logged in, checkbox is displayed for the user to save this address to their profile. If they click this checkbox and the order is completed, the delivery details are added to the profile page
 -	If user is not logged in, as long as they provide all the required fields the purchase can be done.
--	I have tested this by creating new accounts, checking this box and checking the profile page after completing the order
 -	Stripe default card number used for payments. No payment issues found
 -	If incorrect card details are entered, an error is displayed to the user
 -	If part of the form is left empty the order will not process and takes the user to the empty section of the form
@@ -245,11 +243,19 @@ to add more than one review. Reviews can also be seen without been logged in.
 -	If a user has forgotten their password, the option is there for them to click it, and run through the forgotten password journey that allows them to reset it. This has been tested with multiple accounts and works
 -	If no user exists with those details, an error will display above the log in form to inform the user of that
 
+### Sign Out
+
+-   User gets redirected to Home page after log out.
+-   User gets a success message when loged out to verify user loged out.
+
+
 ### Profile
 -	Order history display is correct and shows all past orders
 -	If the order number is clicked, the user can see all the information in that order
 -	Default Delivery Information form works as intended, and auto-fills if it has been selected in the checkout process
 -	Updating the address works correctly, and is reflected both on the profile page and the checkout
+
+
 
 ## First Time Users
 
